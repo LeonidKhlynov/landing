@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/css/main_page.css">
+	<title>Main page</title>
+</head>
+<body>
+	<!-- Шапка сайта -->
+<div class="header">
+	<!-- Главная станица -->
+	<div id="logo" class="pos pos_left">
+		Главная страница
+	</div>
+	<!-- Поиск -->
+	<div class="srch_block pos pos_left">
+		<div class="srch_inp pos pos_left">
+			<input type="text" name="search" placeholder="Поиск...">
+		</div>
+		<div class="srch_btn pos pos_left">
+			<button type="submit">
+				<img class="srch_btn_img" src="../static/img/srch.png">
+			</button>
+		</div>
+
+	</div>
+</div>
+	<!-- Тело сайта -->
+<div class="body">
+{% for new in news %}
+	<div id="news" class="bg">
+		<div class="title">
+			{{ new.title }}
+		</div>
+		<div class="txt">
+			{{ new.about }}
+		</div>
+	</div>
+{% endfor %}
+</div>
+	<!-- Подвал сайта -->
+<div class="footer bg">
+</div>
+</body>
+</html>
